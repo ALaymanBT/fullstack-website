@@ -19,6 +19,11 @@ const contactRouter = require('./app_server/routes/contact');
 const apiRouter = require('./app_api/routes/index');
 
 const app = express();
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:4200',
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -41,7 +46,7 @@ app.use('/meals', mealsRouter);
 app.use('/news', newsRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
-app.use('/api', apiRouter);
+app.use('/api', cors(corsOptions), apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
