@@ -14,7 +14,7 @@ export class DeleteTripComponent implements OnInit {
     private tripsService: TripsService,
     private activatedRoute: ActivatedRoute) { }
 
-
+    // FIXME: Update with code to display confirmation modal
   ngOnInit(): void {
       this.tripsService.deleteTrip(this.activatedRoute.snapshot.params['tripCode'])
       .subscribe({

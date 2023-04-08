@@ -6,10 +6,8 @@
         <p class="card-subtitle mt-3 mb-3 text-muted">{{ trip.length }} only {{ trip.perPerson | currency:'USD' }}</p>
         <p class="card-text" [innerHTML]="trip.description"></p>
     </div>
-    <div class="card-footer">
-        <div class="btn-wrapper text-center d-flex justify-content-between">
+    <div class="card-footer text-center d-flex justify-content-between">
         <a [routerLink]="'/edit-trip/' + trip.code" class="btn btn-primary">Edit</a>
-        <a [routerLink]="'/delete-trip/' + trip.code" class="btn btn-primary">Delete</a>
-        </div>
+        <a [routerLink]="'/delete-trip/' + trip.code" class="btn btn-danger">Delete</a>
     </div>
 </div>
