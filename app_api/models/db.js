@@ -3,6 +3,7 @@ const host = process.env.DB_HOST || '127.0.0.1';
 const conn_uri = `mongodb://${host}/travlr`;
 
 require('./trips');
+require('./users');
 const {seed} = require('./seed');
 
 mongoose.connection.on('connected', () => console.log('CONNECTED!'));
